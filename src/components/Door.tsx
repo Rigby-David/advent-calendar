@@ -1,28 +1,27 @@
 import { useState } from "react";
-import { DoorProps, DoorType } from "./door.interfaces";
+import { DoorProps, QuoteType } from "./door.interfaces";
 import "./Door.css";
+import { getAllQuotes } from "../fetch-utils";
 
 export default function Door({ door }: DoorProps) {
-  const [contents] = useState(["Day One", "Day Two", "Day Three"]);
-  const [doorObject, setDoorObject] = useState<DoorType>({
+  const [doorObject, setDoorObject] = useState<QuoteType>({
     id: door.id,
-    name: "",
+    film: "",
+    author: "",
+    quote: "",
   });
 
-  const clickDoor = (id: number) => {
-    if (id == door.id) {
-      const clickedDoor = {
-        ...door,
-        name: contents[id - 1],
-      };
-      setDoorObject(clickedDoor);
-    }
+  const handleGetQuoteById = async (id: number) => {
+    console.log("id", id);
+    const data = await getAllQuotes(id);
+    console.log("data", data);
+    setDoorObject(data);
   };
 
   return (
-    <div className="door-item" onClick={() => clickDoor(door.id)}>
+    <div className="door-item" onClick={() => handleGetQuoteById(door.id)}>
       {doorObject.id}
-      {doorObject.name}
+      {doorObject.quote}
     </div>
   );
 }

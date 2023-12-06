@@ -1,19 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Door from "./components/Door";
-import { DoorType } from "./components/door.interfaces";
-import { getAllQuotes } from "./fetch-utils";
+import { DoorObject } from "./components/door.interfaces";
 
 function App() {
-  const [doorArray, setDoorArray] = useState<DoorType[]>([]);
-
-  async function handleQuotes() {
-    const data = await getAllQuotes();
-    console.log("data", data);
-    return data;
-  }
-
-  handleQuotes();
+  const [doorArray, setDoorArray] = useState<DoorObject[]>([]);
 
   useEffect(() => {
     const generateDoors = () => {
@@ -29,8 +20,6 @@ function App() {
     };
     generateDoors();
   }, []);
-
-  console.log(doorArray);
 
   return (
     <div className="app">
