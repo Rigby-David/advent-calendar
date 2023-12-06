@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { DoorProps, DoorType } from "./door.interfaces";
+import "./Door.css";
 
 export default function Door({ door }: DoorProps) {
   const [contents] = useState(["Day One", "Day Two", "Day Three"]);
@@ -19,7 +20,7 @@ export default function Door({ door }: DoorProps) {
   };
 
   return (
-    <div onClick={() => clickDoor(door.id)}>
+    <div className="door-item" onClick={() => clickDoor(door.id)}>
       {doorObject.id}
       {doorObject.name}
     </div>

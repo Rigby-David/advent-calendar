@@ -8,7 +8,9 @@ function App() {
   const [doorArray, setDoorArray] = useState<DoorType[]>([]);
 
   async function handleQuotes() {
-    await getAllQuotes();
+    const data = await getAllQuotes();
+    console.log("data", data);
+    return data;
   }
 
   handleQuotes();
@@ -31,12 +33,14 @@ function App() {
   console.log(doorArray);
 
   return (
-    <>
-      {doorArray &&
-        doorArray.map((door, i) => {
-          return <Door key={door.id + i} door={door} />;
-        })}
-    </>
+    <div className="app">
+      <div className="door-container">
+        {doorArray &&
+          doorArray.map((door, i) => {
+            return <Door key={door.id + i} door={door} />;
+          })}
+      </div>
+    </div>
   );
 }
 

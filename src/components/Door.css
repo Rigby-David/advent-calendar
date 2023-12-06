@@ -1,0 +1,15 @@
+.door-container {
+  font-family: "Mountains of Christmas", serif;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.door-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  margin: 1em;
+}
