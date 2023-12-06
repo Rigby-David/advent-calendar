@@ -2,9 +2,16 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Door from "./components/Door";
 import { DoorType } from "./components/door.interfaces";
+import { getAllQuotes } from "./fetch-utils";
 
 function App() {
   const [doorArray, setDoorArray] = useState<DoorType[]>([]);
+
+  async function handleQuotes() {
+    await getAllQuotes();
+  }
+
+  handleQuotes();
 
   useEffect(() => {
     const generateDoors = () => {
