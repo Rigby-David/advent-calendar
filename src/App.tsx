@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Door from "./components/Door";
-import { DoorObject } from "./components/door.interfaces";
+import { ObjectWithId } from "./components/door.interfaces";
 
 function App() {
-  const [doorArray, setDoorArray] = useState<DoorObject[]>([]);
+  const [doorArray, setDoorArray] = useState<ObjectWithId[]>([]);
 
   useEffect(() => {
     const generateDoors = () => {
@@ -23,6 +23,7 @@ function App() {
 
   return (
     <div className="app">
+      <h1>John and Hans - A Christmas Surprise</h1>
       <div className="door-container">
         {doorArray &&
           doorArray.map((door, i) => {

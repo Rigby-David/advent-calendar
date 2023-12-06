@@ -5,10 +5,10 @@ export interface QuoteType {
   quote: string;
 }
 
-export interface DoorObject {
+export interface ObjectWithId {
   id: number;
 }
 
 export interface DoorProps {
-  door: DoorObject;
+  door: ObjectWithId;
 }
