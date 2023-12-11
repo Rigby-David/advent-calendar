@@ -1,30 +1,14 @@
-# React + TypeScript + Vite
+# Advent Calendar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### As a user...
 
-Currently, two official plugins are available:
+I should be able to see 24 "doors", on the main page of the app, one for each of the first 24 days of December.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I should be able to "open" a door for the current date and any past dates and receive a "treat."
 
-## Expanding the ESLint configuration
+I should NOT be able to open doors for future dates.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Should each 'door' be a component?
+Should there be a user to track how many 'doors' they've opened? Or store in state?
+Should each 'door' always have the same reward?
+What sort of notification/welcome on last 'door' opening?
