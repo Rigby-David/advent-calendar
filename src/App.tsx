@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Door from "./components/Door";
-import { DoorType } from "./components/door.interfaces";
+import { ObjectWithId } from "./components/door.interfaces";
 
 function App() {
-  const [doorArray, setDoorArray] = useState<DoorType[]>([]);
+  const [doorArray, setDoorArray] = useState<ObjectWithId[]>([]);
 
   useEffect(() => {
     const generateDoors = () => {
@@ -21,15 +21,16 @@ function App() {
     generateDoors();
   }, []);
 
-  console.log(doorArray);
-
   return (
-    <>
-      {doorArray &&
-        doorArray.map((door, i) => {
-          return <Door key={door.id + i} door={door} />;
-        })}
-    </>
+    <div className="app">
+      <h1>John and Hans - A Christmas Surprise</h1>
+      <div className="door-container">
+        {doorArray &&
+          doorArray.map((door, i) => {
+            return <Door key={door.id + i} door={door} />;
+          })}
+      </div>
+    </div>
   );
 }
 

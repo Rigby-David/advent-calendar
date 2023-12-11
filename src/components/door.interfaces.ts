@@ -1,8 +1,14 @@
-export interface DoorType {
+export interface QuoteType {
   id: number;
-  name?: string;
+  film: string;
+  author: string;
+  quote: string;
+}
+
+export interface ObjectWithId {
+  id: number;
 }
 
 export interface DoorProps {
-  door: DoorType;
+  door: ObjectWithId;
 }
